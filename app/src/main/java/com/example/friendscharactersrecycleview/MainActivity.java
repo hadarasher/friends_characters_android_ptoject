@@ -32,14 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < MyData.drawableArray.length; i++) {
             dataSet.add(new DataModel(
-                    MyData.nameArray[i],
-                    MyData.descriptionArray[i],
-                    MyData.id_[i],
-                    MyData.drawableArray[i]
-            ));
-        }
+                MyData.nameArray[i],
+                MyData.descriptionArray[i],
+                MyData.id_[i],
+                MyData.drawableArray[i]
+        ));
+    }
 
-        adapter=new CustomAdapter(dataSet);
+    adapter=new CustomAdapter(dataSet);
         recyclerView.setAdapter(adapter);
     }
 }

@@ -13,49 +13,49 @@ import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter {
     private ArrayList<DataModel> dataSet;
+
     public CustomAdapter(ArrayList<DataModel> dataSet) {
-        this.dataSet=dataSet;
+        this.dataSet = dataSet;
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView textViewName;
         TextView textViewDescription;
         ImageView imageView;
 
-        public MyViewHolder(View itemView)
-        {
+        public MyViewHolder(View itemView) {
             super(itemView);
 
-            textViewName=itemView.findViewById(R.id.characterName);
-            textViewDescription=itemView.findViewById(R.id.characterDecription);
-            imageView=itemView.findViewById(R.id.charPicture);
+            textViewName = itemView.findViewById(R.id.characterName);
+            textViewDescription = itemView.findViewById(R.id.characterDecription);
+            imageView = itemView.findViewById(R.id.charPicture);
         }
     }
 
-    public CustomAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout,parent,false);
-        MyViewHolder myViewHolder=new MyViewHolder(view);
+    @NonNull
+    public CustomAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout, parent, false);
+        MyViewHolder myViewHolder = new MyViewHolder(view);
 
         return myViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        MyViewHolder myViewHolder = (MyViewHolder) holder;
+
+        TextView textViewName = myViewHolder.textViewName;
+        TextView textViewDescription = myViewHolder.textViewDescription;
+        ImageView imageView = myViewHolder.imageView;
+
+        textViewName.setText(dataSet.get(position).getName());
+        textViewDescription.setText(dataSet.get(position).getDescription());
+        imageView.setImageResource(dataSet.get(position).getImage());
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
-    }
-
-    public void onBindViewHolder(CustomAdapter.MyViewHolder holder,int position){
-        TextView textViewName=holder.textViewName;
-        TextView textViewDescription=holder.textViewDescription;
-        ImageView imageView=holder.imageView;
-
-        textViewName.setText(dataSet.get(position).getName());
-        textViewDescription.setText(dataSet.get(position).getName());
-        imageView.setImageResource(dataSet.get(position).getImage());
+        return dataSet.size();
     }
 }
