@@ -38,7 +38,8 @@
         android:layout_margin="5dp"
         android:background="@drawable/search_character_view"
         android:iconifiedByDefault="false"
-        android:queryHint="Search character" />
+        android:queryHint="Search character"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/res"
