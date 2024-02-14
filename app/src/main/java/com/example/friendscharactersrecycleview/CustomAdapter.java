@@ -18,6 +18,10 @@ public class CustomAdapter extends RecyclerView.Adapter {
         this.dataSet = dataSet;
     }
 
+    public void setFilteredList(ArrayList<DataModel> filteredList){
+        this.dataSet=filteredList;
+        notifyDataSetChanged();
+    }
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView textViewName;
         TextView textViewDescription;

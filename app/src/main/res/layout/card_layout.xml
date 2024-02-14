@@ -10,26 +10,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="5dp">
 
         <ImageView
             android:id="@+id/charPicture"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:padding="5dp"
+            android:layout_gravity="top"
             tools:srcCompat="@drawable/chandler" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/characterName"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.8"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:text="character name"
                 android:textColor="#FFFFFF"
@@ -40,7 +41,7 @@
             <TextView
                 android:id="@+id/characterDecription"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="0.2"
                 android:text="description"
                 android:textColor="#FFFFFF" />
